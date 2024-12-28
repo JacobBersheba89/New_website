@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW_eticWEBSITE_no_colections_of_data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interaktivní web</h1>
+        <p>Tento web nesbírá žádné informace o vás.</p>
+    </header>
+    <main>
+        <section id="color-changer">
+            <h2>Změna barvy pozadí</h2>
+            <button onclick="changeColor('lightblue')">Světlá modrá</button>
+            <button onclick="changeColor('lightgreen')">Světlá zelená</button>
+            <button onclick="changeColor('lightcoral')">Světlá červená</button>
+        </section>
+
+        <section id="faq">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Co je tento web?</h3>
+                <p class="answer" style="display:none;">Tento web je ukázka jednoduchého a interaktivního designu bez sledování uživatelů.</p>
+            </div>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(this)">Jak funguje změna barvy?</h3>
+                <p class="answer" style="display:none;">Barvy se mění pomocí JavaScriptu, který manipuluje s vlastnostmi CSS přímo v prohlížeči.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Interaktivní web. Bezpečnost a soukromí.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
