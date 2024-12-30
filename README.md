@@ -1,4 +1,4 @@
-# Personal Website
+# Personal Website.. something what I preparing now about me...
 
 Welcome to the repository for my personal website! This site is designed to showcase who I am, what I do, and my passion for technology and development. It is clean, minimalistic, and privacy-conscious, ensuring a cookie-free browsing experience.
 
