@@ -5,7 +5,7 @@ Welcome to the repository for my personal website! This site is designed to show
 ## Features
 
 - **Personal Portfolio:** Highlights my skills, projects, and professional journey.
-- <span style="color: blue;">**Privacy First:** The website prioritizes user privacy and ensures no cookies are collected.</span>
+- **Privacy First:** 🌱 The website prioritizes user privacy and ensures no cookies are collected.
 - **Minimalistic Design:** Focused on simplicity and usability.
 
 ## Technology Stack
