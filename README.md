@@ -22,28 +22,4 @@ This website serves as:
 2. A place to connect with like-minded individuals.
 3. A personal project to refine my web development skills.
 
-## Getting Started
-
-To view the site locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   ```
-2. Navigate to the project folder:
-   ```bash
-   cd your-repo-name
-   ```
-3. Open `index.html` in your favorite browser.
-
-## Contributing
-
-This is a personal project and not open for contributions at this time. However, I welcome feedback and suggestions! Feel free to reach out via [your contact method here, e.g., email/linkedin/etc.].
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
----
-
 Thank you for visiting! I hope you enjoy the website as much as I enjoyed creating it. 😊
