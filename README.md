@@ -1,4 +1,4 @@
-<h1><span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span></h1>
+<h1><span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span></h1> (I like australia.. that's why the kangaroo)
 
 ## Features
 
