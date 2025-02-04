@@ -1,4 +1,4 @@
-<H1><span style: "color:lightblue"> Personal Website 🦘👨‍🚀</H1> </span>
+<H1><span style="color:lightblue"> Personal Website 🦘👨‍🚀</H1> </span>
 
 ## Features
 
