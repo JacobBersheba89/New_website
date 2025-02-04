@@ -13,5 +13,5 @@ Thank you for visiting! I hope you enjoy the website as much as I enjoyed creati
 
 ![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/web.png?raw=true)<br><br>
 
-<small>(I like australia.. that's why the kangaroo)</small>
+<small>(I like australia.. that's why the kangaroo🪃🦘🌏 )</small>
 
