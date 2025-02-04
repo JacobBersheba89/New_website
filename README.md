@@ -2,8 +2,6 @@
 <h1>☝️
 <span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span></h1> (I like australia.. that's why the kangaroo)
 
-## Features
-
 **WHAT IS IT ABOUT?:** <br>
 a little about me, my data analysis, my hobbies - there will be other things besides IT that I like to do, some contact, and I'm planning other things... for example, connecting to a home monitoring station, etc. But that's more music of the future :)
 
