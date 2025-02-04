@@ -1,5 +1,5 @@
 ![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/logo.png?raw=true)
-#☝️<span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span> <small>(I like australia.. that's why the kangaroo)</small>#
+<h1>☝️<span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span> <small>(I like australia.. that's why the kangaroo)</small></h1>
 
 **WHAT IS IT ABOUT?:** <br>
 a little about me, my data analysis, my hobbies - there will be other things besides IT that I like to do, some contact, and I'm planning other things... for example, connecting to a home monitoring station, etc. But that's more music of the future :)
