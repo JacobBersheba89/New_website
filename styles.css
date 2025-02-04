@@ -1,0 +1,74 @@
+body {
+    background-color: #303235; 
+    color: #ffffff;
+    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/*menu*/
+nav {
+    background-color: #303235; 
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    height: 40px; 
+    margin-left: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Automatické zarovnání na střed */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #d69e24; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #d4d2ca; 
+}
+
+section {
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #e2b85c;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* Media queries pro responsivní design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Uspořádání položek ve sloupci pro malé obrazovky */
+    }
+
+    .logo {
+        margin-left: 0; /* Vycentrování loga na malé obrazovce */
+    }
+
+    nav ul {
+        justify-content: center; /* Zarovnání menu na střed */
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
