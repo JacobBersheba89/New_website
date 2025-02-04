@@ -13,3 +13,4 @@ if anyone want to have fork for this.. it´s no prom. Will be actuyl my first �
 Thank you for visiting! I hope you enjoy the website as much as I enjoyed creating it. 😊
 
 ![Vizualizace][https://github.com/JacobBersheba89/Data_Analyst_Course/raw/main/Aaa%20___final_project____/web.PNG]
+![Vizualizace](https://github.com/JacobBersheba89/Data_Analyst_Course/raw/main/Aaa%20___final_project____/0.PNG)
