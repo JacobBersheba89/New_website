@@ -1,3 +1,4 @@
+![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/logo.png?raw=true)
 <h1><span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span></h1> (I like australia.. that's why the kangaroo)
 
 ## Features
