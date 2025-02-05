@@ -6,8 +6,9 @@ a little about me, my data analysis, my hobbies - there will be other things bes
 
 
 ## Goals
-i would like to have just nice personal web, novel - simply one that is not seen, and also improve it over time.. have fun with it and develop it. 🙏🧑‍💻
+I would like to have just nice personal web, novel - simply one that is not seen, and also improve it over time.. have fun with it and develop it. 🙏🧑‍💻
 if anyone want to have fork for this.. it´s no prom. Will be actuyl my first 😅
+Definitely muss have soma API solutions.. anything. I mean, for example weather connection, My GIt work connection, my home senzor connection, whatever.... will see 
 
 Thank you for visiting! I hope you enjoy the website as much as I enjoyed creating it. 😊
 
