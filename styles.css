@@ -35,9 +35,10 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #d69e24; 
+    color: #505455; 
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.4s ease;
 }
 
 nav ul li a:hover {
@@ -54,6 +55,34 @@ h1 {
 
 p {
     font-size: 1.2em;
+}
+
+/* Footer styl */
+footer {
+    background-color: #303235; 
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    background-color: #505455;
+    color: #303235;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 9px;
+    transition: all 0.4s ease;
+}
+
+.social-link:hover {
+    background-color: #949391;
+    color: #303235;
 }
 
 /* Media queries pro responsivní design */
