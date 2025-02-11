@@ -1,3 +1,73 @@
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+document.body.appendChild(canvas);
+canvas.style.position = 'fixed';
+canvas.style.top = '0';
+canvas.style.left = '0';
+canvas.style.width = '100vw';
+canvas.style.height = '100vh';
+canvas.style.zIndex = '-1';
+canvas.style.background = 'rgba(10, 10, 10, 0)';
+
+document.body.style.overflow = 'hidden';
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let points = [];
+const maxPoints = 200;
+let x = 0;
+let y = canvas.height / 2;
+
+function drawGraph() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+
+    for (let i = 0; i < points.length; i++) {
+        let p = points[i];
+        if (i === 0) {
+            ctx.moveTo(p.x, p.y);
+        } else {
+            ctx.lineTo(p.x, p.y);
+        }
+    }
+    ctx.stroke();
+
+    // Přidání kuličky na špičku
+    if (points.length > 0) {
+        let lastPoint = points[points.length - 1];
+        ctx.beginPath();
+        ctx.arc(lastPoint.x, lastPoint.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = '#e2b85c';
+        ctx.fill();
+    }
+}
+
+function updateGraph() {
+    x += 5;
+    y += (Math.random() - 0.5) * 20;
+    if (y < 0) y = 0;
+    if (y > canvas.height) y = canvas.height;
+    
+    points.push({ x, y });
+    if (points.length > maxPoints) {
+        points.shift();
+    }
+    
+    for (let i = 0; i < points.length; i++) {
+        points[i].x -= 5;
+    }
+    drawGraph();
+}
+
+setInterval(updateGraph, 50);
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // Dynamické načítání obsahu stránek
     const links = document.querySelectorAll("nav ul li a");
@@ -31,78 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 .catch(error => console.error("Chyba při načítání obsahu:", error));
         });
     });
-
-    // Funkce pro načtení a zobrazení GitHub grafu
-    function renderGitHubActivityChart() {
-        const username = "JacobBersheba89"; 
-        const canvasId = "githubActivityChart";
-        
-        // Zkontrolujeme, jestli existuje prvek pro graf
-        const canvasElement = document.getElementById(canvasId);
-        if (!canvasElement) {
-            console.warn("Canvas pro graf nenalezen.");
-            return;
-        }
-
-        const ctx = canvasElement.getContext("2d");
-
-        fetch(`https://api.github.com/users/${username}/events`)
-            .then(response => response.json())
-            .then(data => {
-                console.log("GitHub data:", data); // Logujeme data pro kontrolu
-
-                const commitsPerDay = {};
-
-                // Zpracování commitů
-                data.forEach(event => {
-                    if (event.type === "PushEvent") {
-                        const date = event.created_at.split("T")[0]; // Jen datum (bez času)
-                        commitsPerDay[date] = (commitsPerDay[date] || 0) + event.payload.commits.length;
-                    }
-                });
-
-                console.log("Commits per day:", commitsPerDay); // Logujeme data pro jednotlivé dny
-
-                // Seřazení dat podle data
-                const labels = Object.keys(commitsPerDay).sort();
-                const values = labels.map(date => commitsPerDay[date]);
-
-                console.log("Labels (seřazené):", labels); // Logujeme labels
-                console.log("Values:", values); // Logujeme values
-
-                // Získání posledních 30 dní
-                const last30Labels = labels.slice(-30); // Posledních 30 dní
-                const last30Values = last30Labels.map(date => commitsPerDay[date]);
-
-                console.log("Last 30 Labels:", last30Labels); // Logujeme posledních 30 dní
-                console.log("Last 30 Values:", last30Values); // Logujeme hodnoty pro posledních 30 dní
-
-                // Vytvoření grafu pomocí Chart.js
-                new Chart(ctx, {
-                    type: "bar", // Graf typu "bar" pro sloupce
-                    data: {
-                        labels: last30Labels,
-                        datasets: [{
-                            label: "Commits per Day",
-                            data: last30Values,
-                            backgroundColor: "#e2b85c", // Světle žlutá
-                            borderColor: "#d4d2ca",     // Šedá barva pro okraje
-                            borderWidth: 2,             // Tlustší okraje pro lepší viditelnost
-                            hoverBackgroundColor: "#f2c94c", // Světlejší žlutá při najetí myší
-                            hoverBorderColor: "#b5a36d",    // Tmavší okraje při najetí
-                            hoverBorderWidth: 2         // Tlustší okraje při najetí
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error("Chyba při načítání dat:", error));
-    }
 
     // Spustíme graf při prvním načtení stránky (pokud je relevantní sekce)
     renderGitHubActivityChart();
