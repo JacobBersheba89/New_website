@@ -6,7 +6,8 @@ canvas.style.top = '0';
 canvas.style.left = '0';
 canvas.style.width = '100vw';
 canvas.style.height = '100vh';
-canvas.style.zIndex = '-1';
+canvas.style.zIndex = '1000'; // Zvýšení z-indexu, aby byl canvas před všemi prvky
+canvas.style.pointerEvents = 'none'; // Zabrání interakci s myší
 canvas.style.background = 'rgba(10, 10, 10, 0)';
 
 document.body.style.overflow = 'hidden';
