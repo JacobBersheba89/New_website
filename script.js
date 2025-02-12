@@ -104,4 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Spustíme graf při prvním načtení stránky (pokud je relevantní sekce)
     renderGitHubActivityChart();
+
+    // Přidání sekce s 4 klikacími boxy
+    const projectsContainer = document.createElement('div');
+    projectsContainer.id = 'projects-container';
+    document.body.insertBefore(projectsContainer, document.querySelector('footer'));
+
+    const projects = [
+        { title: 'Covid Data Analysis', img: 'covid.png', link: 'covid.html' },
+        { title: 'Stock Market Analysis', img: 'stocks.png', link: 'stocks.html' },
+        { title: 'Machine Learning Models', img: 'ml.png', link: 'ml.html' },
+        { title: 'Visualization Dashboards', img: 'dashboard.png', link: 'dashboard.html' }
+    ];
+
+    projects.forEach(proj => {
+        const projectBox = document.createElement('a');
+        projectBox.href = proj.link;
+        projectBox.className = 'project-box';
+        projectBox.innerHTML = `<img src="${proj.img}" alt="${proj.title}"><p>${proj.title}</p>`;
+        projectsContainer.appendChild(projectBox);
+    });
 });
