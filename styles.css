@@ -30,7 +30,7 @@ nav {
 }
 
 #dynamic-content p {
-    color: #505455;
+    color: #797979;
     font-size: 1.2em;
 }
 
@@ -74,6 +74,7 @@ h1 {
 
 p {
     font-size: 1.2em;
+
 }
 
 #githubActivityChart {
