@@ -35,7 +35,7 @@ function drawGraph() {
     }
     ctx.stroke();
 
-    // Přidání kuličky na špičku
+    // kulichka
     if (points.length > 0) {
         let lastPoint = points[points.length - 1];
         ctx.beginPath();
@@ -78,12 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             const section = this.getAttribute("href").replace("#", "");
-
+    
             console.log(`Kliknuto na: ${section}`);
-
+    
             const url = `${section}.html`;
             console.log(`Zkouším načíst: ${url}`);
-
+    
             fetch(url)
                 .then(response => {
                     console.log(`Odpověď serveru: ${response.status}`);
@@ -95,6 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(data => {
                     console.log(`Úspěšně načteno: ${url}`);
                     content.innerHTML = data;
+    
+                    // Skrytí projektů při About Me
+                    const projectsContainer = document.getElementById("projects-container");
+                    if (projectsContainer) {
+                        projectsContainer.style.display = section === "aboutme" ? "none" : "flex";
+                    }
+    
                     if (section === "aboutme") {
                         renderGitHubActivityChart();
                     }
@@ -102,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .catch(error => console.error("Chyba při načítání obsahu:", error));
         });
     });
+    
 
     // Spustíme graf při prvním načtení stránky (pokud je relevantní sekce)
     renderGitHubActivityChart();
