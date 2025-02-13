@@ -2,7 +2,7 @@ const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 document.body.appendChild(canvas);
 canvas.style.position = 'fixed';
-canvas.style.top = '0';
+canvas.style.top = '250px';
 canvas.style.left = '0';
 canvas.style.width = '100vw';
 canvas.style.height = '100vh';
@@ -17,7 +17,7 @@ canvas.height = window.innerHeight;
 let points = [];
 const maxPoints = 200;
 let x = 0;
-let y = canvas.height / 2;
+let y = canvas.height / 1.95; //počátek dynamické křivky
 
 function drawGraph() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -117,9 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const projects = [
         { title: 'Covid Data Analysis', img: 'covid.png', link: 'covid.html' },
-        { title: 'Stock Market Analysis', img: 'stocks.png', link: 'stocks.html' },
-        { title: 'Machine Learning Models', img: 'ml.png', link: 'ml.html' },
-        { title: 'Visualization Dashboards', img: 'dashboard.png', link: 'dashboard.html' }
+        { title: 'Family in time', img: 'family.png', link: 'family.html' },
+        { title: 'Ukrainian conflict', img: 'uk2.png', link: 'uk.html' },
+        { title: 'Recent nutritional changes', img: 'food.png', link: 'foodfacts.html' }
     ];
 
     projects.forEach(proj => {
