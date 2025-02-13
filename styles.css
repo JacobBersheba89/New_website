@@ -82,11 +82,13 @@ section {
 
 /* Styl jednotlivých boxů */
 .project-box {
-    flex: 1; /* Každý box bude mít stejnou velikost */
-    max-width: 250px; /* Omezíme maximální šířku */
+    flex: 1;
+    max-width: 250px; /* Šířka boxu */
+    min-height: 180px; /* Nastaví minimální výšku */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Vycentrování textu */
     background-color: #303235;
     padding: 20px;
     border-radius: 12px;
@@ -95,6 +97,14 @@ section {
     color: white;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.project-box p {
+    white-space: normal; /* Umožní zalomení textu */
+    word-wrap: break-word; /* Pokud je slovo moc dlouhé, zalomí se */
+    overflow-wrap: break-word;
+    text-align: center; /* Vycentrování textu */
+}
+
 
 /* Obrázek uvnitř boxu */
 .project-box img {
@@ -105,7 +115,7 @@ section {
 
 /* Hover efekt - průhlednost a zvětšení */
 .project-box:hover {
-    transform: scale(1.05);
+    transform: scale(1.15);
     opacity: 0.85;
 }
 
