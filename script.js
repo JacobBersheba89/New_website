@@ -6,7 +6,8 @@ canvas.style.top = '0';
 canvas.style.left = '0';
 canvas.style.width = '100vw';
 canvas.style.height = '100vh';
-canvas.style.zIndex = '-1';
+canvas.style.zIndex = '1000'; // Zvýšení z-indexu, aby byl canvas před všemi prvky
+canvas.style.pointerEvents = 'none'; // Zabrání interakci s myší
 canvas.style.background = 'rgba(10, 10, 10, 0)';
 
 document.body.style.overflow = 'hidden';
@@ -108,6 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Přidání sekce s 4 klikacími boxy
     const projectsContainer = document.createElement('div');
     projectsContainer.id = 'projects-container';
+    projectsContainer.style.marginTop = '30px';
+    projectsContainer.style.display = 'flex'; // Umístění boxů vedle sebe
+    projectsContainer.style.justifyContent = 'center';
+    projectsContainer.style.flexWrap = 'wrap'; // Zajistí přizpůsobení pro menší obrazovky
     document.body.insertBefore(projectsContainer, document.querySelector('footer'));
 
     const projects = [
@@ -121,6 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const projectBox = document.createElement('a');
         projectBox.href = proj.link;
         projectBox.className = 'project-box';
+        projectBox.style.margin = '15px';
+        projectBox.style.width = '200px'; // Nastavení šířky pro konzistentní zobrazení
         projectBox.innerHTML = `<img src="${proj.img}" alt="${proj.title}"><p>${proj.title}</p>`;
         projectsContainer.appendChild(projectBox);
     });
