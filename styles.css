@@ -65,8 +65,67 @@ nav ul li a:hover {
 
 section {
     padding: 50px 20px;
-    background-color: #3b3e42; /* Pozadí pro sekce */
+    background-color: #303235; /* Pozadí pro sekce */
 }
+
+/* Kontejner pro projekty */
+#projects-container {
+    display: flex;
+    justify-content: center; /* Zarovnání boxů na střed */
+    flex-wrap: nowrap; /* Zakáže zalomení na další řádek */
+    gap: 20px; /* Mezera mezi boxy */
+    max-width: 1200px; /* Omezení maximální šířky */
+    margin: 50px auto;
+    padding: 20px ;
+    gap: 400px auto ;
+}
+
+/* Styl jednotlivých boxů */
+.project-box {
+    flex: 1; /* Každý box bude mít stejnou velikost */
+    max-width: 250px; /* Omezíme maximální šířku */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #303235;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Obrázek uvnitř boxu */
+.project-box img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Hover efekt - průhlednost a zvětšení */
+.project-box:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* Responzivita - pokud je obrazovka menší, boxy se zarovnají do 2 sloupců */
+@media (max-width: 1000px) {
+    #projects-container {
+        flex-wrap: wrap; /* Povolení zalomení boxů */
+    }
+    .project-box {
+        flex: 0 1 calc(50% - 20px); /* Dva boxy vedle sebe */
+    }
+}
+
+/* Responzivita pro mobilní zařízení - 1 box na řádek */
+@media (max-width: 600px) {
+    .project-box {
+        flex: 0 1 100%;
+    }
+}
+
 
 h1 {
     color: #e2b85c;
@@ -98,7 +157,7 @@ footer {
 .social-link {
     background-color: #505455;
     color: #303235;
-    padding: 15px 40px;
+    padding: 25px 75px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 9px;
