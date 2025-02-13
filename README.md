@@ -1,4 +1,4 @@
-![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/logo.png?raw=true)
+![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/img/logo.png?raw=true)
 <h1>☝️<span style="color:#dd9e15"> Personal Website 🦘👨‍🚀</span></h1>
 
 **WHAT´S IT ABOUT?:** <br>
@@ -12,7 +12,7 @@ On web definitely muss have soma API solutions.. anything. I mean, for example w
 
 Thank you for visiting! I hope you enjoy the website as much as I enjoyed creating it. 😊
 
-![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/5.png?raw=true)<br><br>
+![Vizualizace](https://github.com/JacobBersheba89/New_website/blob/main/img/5.png?raw=true)<br><br>
 
 <small>(I like australia.. that's why the kangaroo🪃🦘🌏 )</small>
 
