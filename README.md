@@ -17,6 +17,6 @@ Thank you for visiting! I hope you enjoy the website as much as I enjoyed creati
 <small>(I like australia.. that's why the kangaroo🪃🦘🌏 )</small>
 
 ## What´s new? 
-I add 4 konteners with desription of my analysis work..
-Add dynamic samll curve with ball - it´s yellow :-)
-I also add links to my cosial network Accounts
+I add 4 konteners with desription of my analysis work.. 🈸
+Add dynamic samll curve with ball - it´s yellow :-) 🫛
+I also add links to my cosial network Accounts 📒
