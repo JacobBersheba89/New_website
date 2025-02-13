@@ -68,14 +68,14 @@ section {
     background-color: #303235; /* Pozadí pro sekce */
 }
 
-/* Kontejner pro projekty */
+/* Kontejnery pro projekty */
 #projects-container {
     display: flex;
     justify-content: center; /* Zarovnání boxů na střed */
     flex-wrap: nowrap; /* Zakáže zalomení na další řádek */
     gap: 20px; /* Mezera mezi boxy */
     max-width: 1200px; /* Omezení maximální šířky */
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px ;
     gap: 400px auto ;
 }
