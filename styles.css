@@ -70,6 +70,8 @@ section {
 
 /* About Me Container */
 .aboutme-container {
+    
+    display: flex; 
     background-color: #3b3e42;
     padding: 50px 20px;
     margin: 20px auto;
@@ -77,8 +79,14 @@ section {
     max-width: 900px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
+    align-items: center;
+    gap: 20px;
     position: relative;
 }
+
+.aboutme-text, .aboutme-img {
+    flex: 1;
+  }
 
 .aboutme-container .social-links {
     margin-top: 50px;
