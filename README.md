@@ -20,3 +20,8 @@ Thank you for visiting! I hope you enjoy the website as much as I enjoyed creati
 I add 4 konteners with desription of my analysis work.. 🈸
 Add dynamic samll curve with ball - it´s yellow :-) 🫛
 I also add links to my cosial network Accounts 📒
+
+
+Changes made:🪃🚧
+23.2. raged aboutme section
+24.2. debug "aboutme" section
