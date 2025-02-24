@@ -25,3 +25,4 @@ I also add links to my cosial network Accounts 📒
 Changes made:🪃🚧
 23.2. raged aboutme section
 24.2. debug "aboutme" section
+24.2. **work on inserting an image and splitting it .. dynamic JS visualisations**
