@@ -10,11 +10,19 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .aboutme-wrapper {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 50px 0;
+        }
         .aboutme-container {
             position: relative;
             width: 800px;
             height: 400px;
-            margin: auto;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -31,19 +39,18 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
         }
         .left {
-            background-image: url('left-image.png');
+            background-image: url('img/left-image.png');
         }
         .right {
-            background-image: url('right-image.png');
+            background-image: url('img/right-image.png');
         }
-        .aboutme-container:hover .left {
-            transform: translateX(-20%);
-        }
+        .aboutme-container:hover .left,
         .aboutme-container:hover .right {
-            transform: translateX(20%);
+            transform: translateX(0);
+            opacity: 0;
         }
         .aboutme-text-overlay {
             position: absolute;
@@ -51,7 +58,7 @@
             font-weight: bold;
             color: white;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 1s ease-in-out;
             text-align: center;
         }
         .aboutme-container:hover .aboutme-text-overlay {
@@ -67,7 +74,7 @@
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 1s ease-in-out;
         }
         .aboutme-container:hover .aboutme-text {
             opacity: 1;
@@ -75,23 +82,25 @@
     </style>
 </head>
 <body>
-    <div class="aboutme-container">
-        <div class="aboutme-img">
-            <div class="split-image left"></div>
-            <div class="split-image right"></div>
-        </div>
-        <div class="aboutme-text-overlay">About Me</div>
-        <div class="aboutme-text">
-            <h1>About Me</h1>
-            <p>G'day! I'm a keen data analyst and programmer.</p>
-            <p>I work especially with Python and SQL but I also develop in JavaScript, and I'm into data visualization. and I would also like AI.</p>
-            <h2>Skills</h2>
-            <ul>
-                <li>📊 Data analysis - Python, SQL, Tableau, Excel, Databases</li>
-                <li>📈 Data visualization - Matplotlib, Dash, Plotly, Mapbox, Networkx, Pandas</li>
-                <li>💻 Web development - HTML, CSS, JS (exploring)</li>
-            </ul>
-            <p>On top of that, I love sport, spend a lot of time with my family, and I'm in the middle of building a house. This past year has been a complete 180° for me as I've been diving headfirst into the IT world, specifically data analysis. I'm loving it and putting in the hard yards to get really good at it. Cheers!</p>
+    <div class="aboutme-wrapper">
+        <div class="aboutme-container">
+            <div class="aboutme-img">
+                <div class="split-image left"></div>
+                <div class="split-image right"></div>
+            </div>
+            <div class="aboutme-text-overlay">About Me</div>
+            <div class="aboutme-text">
+                <h1>About Me</h1>
+                <p>G'day! I'm a keen data analyst and programmer.</p>
+                <p>I work especially with Python and SQL but I also develop in JavaScript, and I'm into data visualization. and I would also like AI.</p>
+                <h2>Skills</h2>
+                <ul>
+                    <li>📊 Data analysis - Python, SQL, Tableau, Excel, Databases</li>
+                    <li>📈 Data visualization - Matplotlib, Dash, Plotly, Mapbox, Networkx, Pandas</li>
+                    <li>💻 Web development - HTML, CSS, JS (exploring)</li>
+                </ul>
+                <p>On top of that, I love sport, spend a lot of time with my family, and I'm in the middle of building a house. This past year has been a complete 180° for me as I've been diving headfirst into the IT world, specifically data analysis. I'm loving it and putting in the hard yards to get really good at it. Cheers!</p>
+            </div>
         </div>
     </div>
 </body>
