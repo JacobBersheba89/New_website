@@ -47,9 +47,12 @@
         .right {
             background-image: url('img/right-image.png');
         }
-        .aboutme-container:hover .left,
+        .aboutme-container:hover .left {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
         .aboutme-container:hover .right {
-            transform: translateX(0);
+            transform: translateX(100%);
             opacity: 0;
         }
         .aboutme-text-overlay {
