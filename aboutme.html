@@ -1,18 +1,90 @@
-<div class="aboutme-container">
-    <div class="aboutme-text">
-      <h1>About Me X</h1>
-      <p>G'day! I'm a keen data analyst and programmer.</p>
-      <p>I work especially with Python and SQL but I also develop in JavaScript, and I'm into data visualization. and I would also like AI. </p>
-      <h2>Skills</h2>
-      <ul>
-        <li>📊 Data analysis - Python, SQL, Tableau, Excel, Databases</li>
-        <li>📈 Data visualization - Matplotlib, Dash, Plotly, Mapbox, Networkx, Pandas</li>
-        <li>💻 Web development - HTML, CSS, JS (exploring)</li>
-      </ul>
-      <p>On top of that, I love sport, spend a lot of time with my family, and I'm in the middle of building a house. This past year has been a complete 180° for me as I've been diving headfirst into the IT world, specifically data analysis. I'm loving it and putting in the hard yards to get really good at it. Cheers!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .aboutme-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .aboutme-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .aboutme-img {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .split-image {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .left {
+            left: 0;
+            background-image: url('left-image.png');
+        }
+        .right {
+            right: 0;
+            background-image: url('right-image.png');
+        }
+        .aboutme-img:hover .left {
+            transform: translateX(-20%);
+        }
+        .aboutme-img:hover .right {
+            transform: translateX(20%);
+        }
+        .aboutme-text-overlay {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .aboutme-img:hover .aboutme-text-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="aboutme-container">
+        <div class="aboutme-text">
+            <h1>About Me X</h1>
+            <p>G'day! I'm a keen data analyst and programmer.</p>
+            <p>I work especially with Python and SQL but I also develop in JavaScript, and I'm into data visualization. and I would also like AI. </p>
+            <h2>Skills</h2>
+            <ul>
+                <li>📊 Data analysis - Python, SQL, Tableau, Excel, Databases</li>
+                <li>📈 Data visualization - Matplotlib, Dash, Plotly, Mapbox, Networkx, Pandas</li>
+                <li>💻 Web development - HTML, CSS, JS (exploring)</li>
+            </ul>
+            <p>On top of that, I love sport, spend a lot of time with my family, and I'm in the middle of building a house. This past year has been a complete 180° for me as I've been diving headfirst into the IT world, specifically data analysis. I'm loving it and putting in the hard yards to get really good at it. Cheers!</p>
+        </div>
+        <div class="aboutme-img">
+            <div class="split-image left"></div>
+            <div class="split-image right"></div>
+            <div class="aboutme-text-overlay">About Me</div>
+        </div>
     </div>
-    <div class="aboutme-img">
-      <img src="img/me.png" alt="My photo">
-    </div>
-  </div>
-  
+</body>
+</html>
