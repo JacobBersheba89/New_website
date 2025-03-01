@@ -21,7 +21,8 @@ I add 4 konteners with desription of my analysis work.. 🈸<br>
 Add dynamic samll curve with ball - it´s yellow :-) 🫛<br>
 I also add links to my cosial network Accounts 📒<br>
 The Aboutme section is basically ready 👦 <br>
-..now I have more sections waiting for me.. it's myhobby's turn
+..now I have more sections waiting for me.. it's myhobby's turn 🎢<br>
+interactive timeline.. GPT chat idea. My interests and hobbies will be displayed on the line over time. Sounds good doesn't it? :-) 〰️<br>
 
 
 Changes made:🪃🚧
@@ -30,3 +31,4 @@ Changes made:🪃🚧
 - 24.2. work on inserting an image and splitting it .. **dynamic JS visualisations**
 - 27.2. completion of the about me section.. I'm fine with it for the time being :-)
 - 28.2. in the end I solved the entire visualization via HTML5
+- 1.3.  I started working on the interactive timeline
