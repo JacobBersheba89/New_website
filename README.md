@@ -21,6 +21,7 @@ I add 4 konteners with desription of my analysis work.. 🈸<br>
 Add dynamic samll curve with ball - it´s yellow :-) 🫛<br>
 I also add links to my cosial network Accounts 📒<br>
 The Aboutme section is basically ready 👦 <br>
+..now I have more sections waiting for me.. it's myhobby's turn
 
 
 Changes made:🪃🚧
