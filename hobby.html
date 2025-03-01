@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .aboutme-container {
+            margin-top: -50px; /* Posun nahoru */
+            background: #303235;
+            border: none;
+            box-shadow: none;
+            position: relative;
+            width: 800px;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .aboutme-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .split-image {
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+        .left {
+            background-image: url('img/left-image.png');
+        }
+        .right {
+            background-image: url('img/right-image.png');
+        }
+        .aboutme-container:hover .left {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .aboutme-container:hover .right {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        .aboutme-text-overlay {
+            position: absolute;
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            text-align: center;
+        }
+        .aboutme-container:hover .aboutme-text-overlay {
+            opacity: 1;
+        }
+        .aboutme-text {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+            background: #303235;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .aboutme-container:hover .aboutme-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="aboutme-wrapper">
+        <div class="aboutme-container">
+            <div class="aboutme-img">
+                <div class="split-image left"></div>
+                <div class="split-image right"></div>
+            </div>
+            <div class="aboutme-text-overlay">About Me</div>
+            <div class="aboutme-text">
+                <h1>About Me</h1>
+                <p>G'day! I'm a keen data analyst and programmer.</p>
+                <p>I work especially with Python and SQL but I also develop in JavaScript, and I'm into data visualization. and I would also like AI.</p><br>
+                <h2 style="color: #e2b85c;">Skills</h2>
+                <p style="color: #e2b85c;">Data analysis - Python, SQL, Tableau, Excel, Databases</p>
+                <p style="color: #e2b85c;">Data visualization - Matplotlib, Dash, Plotly, Mapbox, Networkx, Pandas</p>
+                <p style="color: #e2b85c;">Web development - HTML, HTML5 (exploring), CSS, JS (exploring)</p><br>
+
+                <p>On top of that, I love sport, spend a lot of time with my family, and I'm in the middle of building a house. This past year has been a complete 180° for me as I've been diving headfirst into the IT world, specifically data analysis. I'm loving it and putting in the hard yards to get really good at it. Cheers!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
