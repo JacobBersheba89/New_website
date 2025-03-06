@@ -16,17 +16,23 @@
             position: relative;
             display: inline-block;
             cursor: pointer;
+            width: 300px;
         }
         .dynamic-content img {
-            width: 300px;
+            position: absolute;
+            width: 100%;
             transition: transform 0.5s ease;
         }
-        .dynamic-content:hover img {
-            transform: scale(1.1);
+        .dynamic-content:hover img:first-child {
+            transform: translateX(-50px);
+        }
+        .dynamic-content:hover img:last-child {
+            transform: translateX(50px);
         }
         .text {
             display: none;
-            margin-top: 20px;
+            margin-top: 200px;
+            padding: 20px;
         }
         .dynamic-content:hover + .text {
             display: block;
@@ -55,7 +61,8 @@
 </head>
 <body>
     <div class="dynamic-content">
-        <img src="img/rucnik1.png" alt="Ručník" id="towel">
+        <img src="img/rucnik2.png" alt="Ručník 1">
+        <img src="img/rucnik1.png" alt="Ručník 2">
     </div>
     <div class="text">
         <p>Jsem Jakub a masíruju rád.. vystudoval jsem regeneraci a výživu ve sportu. Pracoval s profi i hobby cyklisty v rámci projektu Čistý sport, také jsem se staral o veslařskou nebo běžkařskou reprezentaci na několika kempech. Provázel jsem také coby masér a kuchař čtyři kluky na dost náročném závodě RAAM v Americe nebo pár kluků na závodech v Austrálii v Cairns při Crocodile trophy.</p>
