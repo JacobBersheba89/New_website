@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masáže - Jakub Pawlas</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .dynamic-content {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .dynamic-content img {
+            width: 300px;
+            transition: transform 0.5s ease;
+        }
+        .dynamic-content:hover img {
+            transform: scale(1.1);
+        }
+        .text {
+            display: none;
+            margin-top: 20px;
+        }
+        .dynamic-content:hover + .text {
+            display: block;
+        }
+        .form-container {
+            margin-top: 40px;
+        }
+        .form-container input, .form-container textarea {
+            display: block;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+        .captcha {
+            margin: 10px 0;
+        }
+        .submit-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dynamic-content">
+        <img src="img/rucnik1.png" alt="Ručník" id="towel">
+    </div>
+    <div class="text">
+        <p>Jsem Jakub a masíruju rád.. vystudoval jsem regeneraci a výživu ve sportu. Pracoval s profi i hobby cyklisty v rámci projektu Čistý sport, také jsem se staral o veslařskou nebo běžkařskou reprezentaci na několika kempech. Provázel jsem také coby masér a kuchař čtyři kluky na dost náročném závodě RAAM v Americe nebo pár kluků na závodech v Austrálii v Cairns při Crocodile trophy.</p>
+        <p>Při masáži dokážu vypnout a soustředit se na svaly, které potřebují odpočinek a regeneraci.</p>
+    </div>
+    
+    <div class="form-container">
+        <h2>Rezervace masáže</h2>
+        <form>
+            <input type="text" name="name" placeholder="Jméno" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Vaše zpráva" required></textarea>
+            <div class="captcha">
+                <label><input type="checkbox" required> Nejsem robot</label>
+            </div>
+            <button type="submit" class="submit-btn">Odeslat</button>
+        </form>
+    </div>
+</body>
+</html>
