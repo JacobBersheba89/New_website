@@ -3,7 +3,7 @@
 
 **WHAT´S IT ABOUT?:** <br>
 a little about me, my data analysis, my hobbies - there will be other things besides IT that I like to do, some contact, and I'm planning other things... for example, connecting to a home monitoring station, etc. But that's more music of the future :)
-so, go on!! :-)
+so, go on!! :-) :-)
 
 ## Goals
 I would like to have just nice personal web, novel - simply one that is not seen, and also improve it over time.. have fun with it and develop it. 🙏🧑‍💻
