@@ -32,3 +32,4 @@ Changes made:🪃🚧
 - 27.2. completion of the about me section.. I'm fine with it for the time being :-)
 - 28.2. in the end I solved the entire visualization via HTML5
 - 1.3.  I started working on the interactive timeline
+- 16.3. so.. I stopped for a bit... well, what can you do?_!
