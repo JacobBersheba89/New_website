@@ -34,3 +34,4 @@ Changes made:🪃🚧
 - 1.3.  I started working on the interactive timeline
 - 7.3. I think "aboutme" is already done..
 - 16.3. so.. I stopped for a bit... well, what can you do?_!
+- 13.6. I should start continue.. isn´it_?!!!
