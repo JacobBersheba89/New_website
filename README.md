@@ -35,4 +35,4 @@ Changes made:🪃🚧
 - 7.3. I think "aboutme" is already done..
 - 16.3. so.. I stopped for a bit... well, what can you do?_!
 - 13.6. I should start continue.. isn´it_?!!! not energy to continue..
-- 07.07. I have to do something toady. 
+- 07.07. I have to do something today. 
