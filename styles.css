@@ -94,6 +94,12 @@ section {
     justify-content: center;
 }
 
+.aboutme-img img {
+    width: 100%;       
+    max-width: 500px;  /* Maximální šířka obrázku */
+    height: auto;
+  }
+
 /* Kontejnery pro projekty */
 #projects-container {
     display: flex;
@@ -230,6 +236,25 @@ footer {
     #github-container iframe {
         height: 350px;
     }
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #24292e;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.github-link:hover {
+    background-color: #444c56;
+    transform: scale(1.05);
 }
 
 /* Media queries pro responsivní design */
