@@ -71,7 +71,7 @@ section {
 /* About Me Container */
 .aboutme-container {
     
-    display: flex; 
+    display: flex;
     background-color: #3b3e42;
     padding: 50px 20px;
     margin: 20px auto;
@@ -99,6 +99,15 @@ section {
     max-width: 500px;  /* Maximální šířka obrázku */
     height: auto;
   }
+
+.hobby-section {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
 
 /* Kontejnery pro projekty */
 #projects-container {
@@ -240,22 +249,33 @@ footer {
 
 .github-link {
     display: inline-block;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background-color: #24292e;
-    color: #ffffff;
-    font-weight: bold;
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-weight: 700;
     font-size: 1.1em;
+    color: #e2b85c;
+    background: #404040;
+    border: 2px solid #e2b85c;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(226, 184, 92, 0.3);
+    transition: 
+        background-color 0.3s ease, 
+        color 0.3s ease, 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.github-link:hover {
-    background-color: #444c56;
-    transform: scale(1.05);
+.github-link:hover, 
+.github-link:focus {
+    background-color: #e2b85c;
+    color: #303235;
+    box-shadow: 0 8px 15px rgba(226, 184, 92, 0.7);
+    transform: translateY(-4px) scale(1.05);
+    outline: none;
 }
+
 
 /* Media queries pro responsivní design */
 @media (max-width: 768px) {
