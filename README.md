@@ -34,7 +34,7 @@ Changes made:🪃🚧
 - 1.3.  I started working on the interactive timeline
 - 7.3. I think "aboutme" is already done..
 - 16.3. so.. I stopped for a bit... well, what can you do?_!
-- 13.6. I should start continue.. isn´it_?!!! not energy to continue..
+- 13.6. I should start continue.. isn´it_?!!! not energy to finish enything..
 - 07.07. I have to do something today.
 - 18.07. Finaly I broke my lazy habbits & I shoft little bit web -  finished link to my analyse sections (covid and family) I also add neww css section
 - 11.08. nothing new
