@@ -38,4 +38,4 @@ Changes made:🪃🚧
 - 07.07. I have to do something today.
 - 18.07. Finaly I broke my lazy habbits & I shoft little bit web -  finished link to my analyse sections (covid and family) I also add neww css section
 - 11.08. nothing new
-- 18.08. few days ago .. I tried to reorganized respectivly creat new section - hobby. I changed footer styl 
+- 18.08. few days ago .. I tried to reorganized respectivly creat new section - hobby. I changed footer styl, also add fadeInUp
