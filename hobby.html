@@ -1,30 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobby</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .hobby-container {
+            margin-top: -50px; /* Posun nahoru */
+            background: #303235;
+            border: none;
+            box-shadow: none;
+            position: relative;
+            width: 800px;
+            height: 600px;
+            overflow: hidden;
+            display: flex;b  
+            align-items: center;
+            justify-content: center;
+        }
+        .hobby-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .split-image {
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        
+        }
+        .hobby-container:hover .left {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+        .hobby-container:hover .right {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        .hobby-text-overlay {
+            position: absolute;
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            text-align: center;
+            width: 100%;
+            top: 40%;
+        }
+        .hobby-container:hover .hobby-text-overlay {
+            opacity: 0;
+        }
+        .hobby-text {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+            background: #303235;
+            border-radius: 10px;
+        }
+        .hobby-text p {
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+        }
+    
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Postupné zpoždění pro jednotlivé odstavce */
+        .hobby-text p:nth-child(1) { animation-delay: 0.5s; }
+        .hobby-text p:nth-child(2) { animation-delay: 1.0s; }
+        .hobby-text p:nth-child(3) { animation-delay: 1.5s; }
+        .hobby-text p:nth-child(4) { animation-delay: 2.5s; }
+        .hobby-text p:nth-child(5) { animation-delay: 5.5s; }
+        .hobby-text p:nth-child(6) { animation-delay: 7.0s; }
     </style>
 </head>
 <body>
-    <header class="header">
-        <img src="logo.png" alt="Logo" class="logo">
-        <nav class="nav">
-            <a href="aboutme.html">About Me</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <h1>Moje životní timeline</h1>
-    <canvas></canvas>
-    <div class="scroll-buttons">
-        <button onclick="scrollTimeline(-300)">&lt;</button>
-        <button onclick="scrollTimeline(300)">&gt;</button>
+    <div class="hobby-wrapper">
+        <div class="hobby-container">
+            <div class="hobby-img">
+                <div class="split-image left"></div>
+                <div class="split-image right"></div>
+            </div>
+            <div class="hobby-text-overlay">My Hobbies</div>
+            <div class="hobby-text">
+                <h1>My Hobbies</h1>
+                <p>think about solutions, i love... find them, i must. a million paths there are.</p>
+                <p>time with my beloved wife, spend i do. sport much in the past i did,</p>
+                <p>but now... for family, care i must. my children, my greatest hobby now they are.</p>
+                <p>star wars, look up to i do. strange and uncommon food, enjoy i do.</p>
+                <p>fresh burritos... mmm, good they are. Los CApolitos.. that is love I!</p>
+            </div>
+        </div>
     </div>
-    
-    <script>
-        function scrollTimeline(amount) {
-            document.getElementById("timeline-container").scrollBy({
-                left: amount,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 </body>
 </html>
