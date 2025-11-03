@@ -41,3 +41,4 @@ Changes made:🪃🚧
 - 18.08. few days ago .. I tried to reorganized respectivly creat new section - hobby. I changed footer styl, also add fadeInUp for visibility of text
 - 21.08. tody trip with my awesome family.. beutiful wife.. and great childrens! We have been in Zoo :-) so today nothign change..
 - 25.08. have to finish main section, I hope will continue soon. No finished old project yet.. and I have new ..
+- 3.11. let´s go new project
