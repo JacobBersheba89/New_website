@@ -1,152 +1,234 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masáže - Jakub Pawlas</title>
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            transition: background-color 0.5s, color 0.5s;
-        }
-        .dark-mode {
-            background-color: #292929;
-            color: white;
-        }
-        .masaze-container {
-            position: relative;
-            width: 800px;
-            height: 600px;
-            margin: 0 auto;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .masaze-img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-        }
-        .split-image {
-            width: 50%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-        }
-        .left {
-            background-image: url('img/m1.png');
-        }
-        .right {
-            background-image: url('img/m2.png');
-        }
-        .masaze-container:hover .left {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        .masaze-container:hover .right {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        .masaze-text {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            text-align: center;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .masaze-container:hover .masaze-text {
-            opacity: 1;
-        }
-        .form-container {
-            margin-top: 40px;
-        }
-        .form-container input, .form-container textarea {
-            display: block;
-            width: 80%;
-            max-width: 400px;
-            margin: 10px auto;
-            padding: 10px;
-        }
-        .captcha {
-            margin: 10px 0;
-        }
-        .submit-btn {
-            border-radius: 10px;
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .dark-mode .submit-btn {
-            background-color: white;
-            color: black;
-        }
-        .darkmode-toggle {
-            border-radius: 10px;
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .dark-mode .darkmode-toggle {
-            background-color: white;
-            color: black;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masáže - Jakub Pawlas</title>
+
+<style>
+    body {
+        background-color: white;
+        color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* --- NAVIGACE --- */
+    nav {
+        width: 100%;
+        background-color: white;
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a, nav button {
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 8px 20px;
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    nav a { background-color: #f0f0f0; color: #333; }
+    nav a:hover { background-color: #e0e0e0; transform: translateY(-2px); }
+    nav button { background-color: #333; color: white; border: 1px solid #333; }
+    nav button:hover { background-color: #555; transform: translateY(-2px); }
+
+    /* --- KONTEJNER MASÁŽÍ --- */
+    .masaze-container {
+        width: 800px;
+        height: 600px;
+        position: relative;
+        margin: 40px auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .masaze-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .split-image {
+        width: 50%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
+
+    .left { background-image: url('img/m1.png'); }
+    .right { background-image: url('img/m2.png'); }
+
+    .masaze-container:hover .left { transform: translateX(-100%); opacity: 0; }
+    .masaze-container:hover .right { transform: translateX(100%); opacity: 0; }
+
+    .masaze-text {
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+        text-align: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .masaze-container:hover .masaze-text { opacity: 1; }
+
+    /* --- SEKCE --- */
+    section {
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: 20px auto;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    h2 { margin-bottom: 20px; }
+    a { color: inherit; }
+
+    /* --- SCROLL REVEAL --- */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .reveal { transform: translateY(15px); transition-duration: 0.5s; }
+    }
+
+    /* --- DARK MODE --- */
+    body.dark-mode { background-color: #111; color: #eee; }
+    body.dark-mode nav { background-color: #222; }
+    body.dark-mode nav a, body.dark-mode nav button { background-color: #333; color: #eee; }
+    body.dark-mode section, body.dark-mode footer { background-color: #1b1b1b; }
+    body.dark-mode .top-menu a:hover, body.dark-mode .top-menu button:hover { background-color: #444; }
+</style>
 </head>
+
 <body>
-    <button class="darkmode-toggle" onclick="toggleDarkMode()">Dark mode tlačítko</button>
-    
-    <div class="masaze-wrapper">
-        <div class="masaze-container">
-            <div class="masaze-img">
-                <div class="split-image left"></div>
-                <div class="split-image right"></div>
-            </div>
-            <div class="masaze-text">
-                <h2>Profesionální regenerace pro tělo i mysl</h2>
-                <p>Jsem Jakub a masáže jsou mou vášní. Studoval jsem regeneraci a výživu ve sportu na Masarykově univerzitě v Brně a roky pracoval s vrcholovými i hobby sportovci.</p>
-                <p>Měl jsem tu čest pečovat o cyklisty v rámci projektu Čistý sport, starat se o veslařskou i běžkařskou reprezentaci, a doprovázet závodníky na extrémních závodech, jako je RAAM v Americe či Crocodile Trophy v Austrálii.</p>
-                <p>Během masáže se plně soustředím na vaše svaly, uvolnění napětí a obnovu energie.</p>
-                <h3>Kdy masíruji?</h3>
-                <p>Po předchozí telefonické domluvě.</p>
-                <h3>Kontakt:</h3>
-                <p><strong>+420 776 100 489</strong></p>
-            </div>
+
+<!-- NAVIGACE -->
+<nav class="top-menu">
+    <a href="#home">úvod</a>
+    <a href="#omne">o masérovi</a>
+    <a href="#cenik">ceník</a>
+    <a href="#kontakt">kontakt</a>
+    <button id="toggleDarkMode">🌙</button> 
+</nav>
+
+<!-- ÚVOD -->
+<div id="home" class="masaze-wrapper">
+    <div class="masaze-container">
+        <div class="masaze-img">
+            <div class="split-image left"></div>
+            <div class="split-image right"></div>
+        </div>
+
+        <div class="masaze-text">
+            <h2>Profesionální regenerace pro tělo i mysl</h2>
+            <p>Každý potřebujeme odpočinek, regeneraci a kompenzaci pracovní či sportovní zátěže.</p>
+            <p>Neodkládejte čas pro sebe. Hledejte způsoby sami nebo společně s odborníky, jak své obtíže vyřešit.</p>
+            <h3>Kdy masíruji?</h3>
+            <p>Vždy po předchozí telefonické domluvě.</p>
+            <p>Většinou od 16 hodiny.</p>
+            <h3>Kontakt:</h3>
+            <p><strong>+420 776 100 489</strong></p>
         </div>
     </div>
-    
-    <div class="form-container">
-        <h2>Rezervace masáže</h2>
-        <form>
-            <input type="text" name="name" placeholder="Jméno" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Vaše zpráva" required></textarea>
-            <div class="captcha">
-                <label><input type="checkbox" required> Nejsem robot</label>
-            </div>
-            <button type="submit" class="submit-btn">Odeslat</button>
-        </form>
+</div>
+
+<!-- O MNĚ -->
+<section id="omne" class="reveal">
+    <h2>O mně</h2>
+    <p>Jsem Jakub a jednoduše masíruju rád. Studoval jsem regeneraci a výživu ve sportu na Masarykově univerzitě v Brně a roky pracoval s vrcholovými i hobby sportovci.</p>
+    <p>Měl jsem tu čest pečovat o cyklisty v rámci projektu Čistý sport, starat se o veslařskou i běžkařskou reprezentaci, a doprovázet závodníky na extrémních závodech, jako byl závod okolo Československa, závod napříč USA - RAAM, či etapový závod Crocodile Trophy v Austrálii.</p>
+    <p>Při masáži se plně soustředím na vaše svaly, uvolnění napětí a obnovu energie.</p>
+    <p>Používám pouze <b> BIO </b> nosné a esenciální oleje.</p>
+</section>
+
+<!-- CENÍK -->
+<section id="cenik" class="reveal">
+    <h2>Ceník</h2>
+    <p>Masáž 60 min – 700 Kč</p>
+    <p>Masáž 90 min – 1000 Kč</p>
+    <p>Při masáži používám baňky a nahřáté lávové kameny.</p> 
+    <p>Také compex molecule nebo Perfgun perkusní pistoli.</p>
+
+    <h3>Pro Vaše blízké mám k dispozici parádní voucher...</h3>
+    <div style="margin-top:20px; width:100%; max-width:900px; height:400px; border-radius:12px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.3); margin:auto;">
+        <img src="voucher.png" alt="voucher" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="reveal">
+    <h2>Kontakt / Rezervace</h2>
+    <p><strong>📞 Telefon:</strong> <a href="tel:+420776100489">+420 776 100 489</a></p>
+    <p><strong>✉️ E-mail:</strong> <a href="mailto:rezervace@jakubpawlas.cz">rezervace@jakubpawlas.cz</a></p>
+    <p><strong>📍 Kde masíruji:</strong> Marušky Kudeříkové 1140/3, 736 01 Havířov - Město</p>
+    <p><strong>📍 IČO:</strong> 75992655, nejsem plátce daně </p>
+
+    <div style="margin-top:20px; border-radius:12px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2604.123456789!2d18.444444!3d49.779999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47125a123456789%3A0xabcdef123456789!2sMaru%C5%A1ky%20Kude%C5%99%C3%ADkov%C3%A9%201140%2F3%2C%20736%2001%20Hav%C3%AD%C5%99ov!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 
-    <script>
-        function toggleDarkMode() {
+    <div style="margin-top:20px;">
+        <img src="tady.png" alt="Ukázkový obrázek" style="width:100%; height:auto; aspect-ratio:1299/731; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Dark mode toggle
+    const toggle = document.getElementById('toggleDarkMode');
+    if(toggle){
+        toggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-        }
-    </script>
+        });
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 120;
+            if(elementTop < windowHeight - revealPoint){
+                el.classList.add('active');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // trigger po načtení
+});
+</script>
+
 </body>
 </html>
