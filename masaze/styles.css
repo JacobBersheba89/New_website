@@ -1,0 +1,285 @@
+/* =========================
+   ZÁKLAD
+========================= */
+
+body {
+    background-color: #f5f5f5;
+    color: #222;
+    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    color: #e2b85c;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* =========================
+   NAVIGACE – PILL MENU
+========================= */
+
+nav {
+    background-color: #303235;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.top-menu a,
+.top-menu button {
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    background-color: rgba(255,255,255,0.08);
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.top-menu a:hover,
+.top-menu button:hover {
+    background-color: rgba(255,255,255,0.18);
+    transform: translateY(-1px);
+}
+
+.top-menu a:active,
+.top-menu button:active {
+    transform: translateY(0);
+}
+
+#toggleDarkMode {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+/* =========================
+   SEKCE – ZAOBLENÉ RÁMEČKY
+========================= */
+
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #1a1a1a; /* tmavší než body pozadí */
+    border-radius: 15px; /* zaoblené rohy */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* jemný stín */
+    transition: background-color 0.3s ease, color 0.3s ease; /* plynulý přechod */
+}
+
+/* Dark mode pro sekce */
+body.dark-mode section {
+    background-color: #222; /* tmavší sekce pro dark mode */
+    color: #eee;
+}
+
+/* =========================
+   OBSAH
+========================= */
+
+#dynamic-content {
+    background-color: #303235;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+#dynamic-content h1 {
+    color: #e2b85c;
+}
+
+#dynamic-content p {
+    color: #797979;
+}
+
+/* =========================
+   ABOUT ME
+========================= */
+
+.aboutme-container {
+    display: flex;
+    background-color: #3b3e42;
+    border-radius: 15px; /* zaoblené rohy */
+    padding: 50px 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    gap: 20px;
+    align-items: center;
+}
+
+.aboutme-text,
+.aboutme-img {
+    flex: 1;
+}
+
+.aboutme-img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* =========================
+   PROJEKTY
+========================= */
+
+#projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.project-box {
+    max-width: 250px;
+    min-height: 180px;
+    background-color: #303235;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-box img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.project-box:hover {
+    transform: scale(1.12);
+    opacity: 0.85;
+}
+
+/* =========================
+   SCROLL REVEAL – ZÁKLAD
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .reveal {
+        transform: translateY(15px);
+        transition-duration: 0.5s;
+    }
+}
+
+
+/* =========================
+   SOCIÁLNÍ ODKAZY
+========================= */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.social-link {
+    background-color: #505455;
+    color: #303235;
+    padding: 25px 75px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #949391;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #303235;
+    padding: 20px;
+    margin-top: 80px;
+    border-radius: 12px; /* zaoblené rohy pro footer */
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+body.dark-mode nav {
+    background-color: #111;
+}
+
+body.dark-mode section,
+body.dark-mode footer,
+body.dark-mode #dynamic-content {
+    background-color: #222; /* tmavší sekce pro dark mode */
+    color: #eee;
+}
+
+body.dark-mode .aboutme-container {
+    background-color: #1b1b1b;
+}
+
+body.dark-mode .top-menu a,
+body.dark-mode .top-menu button {
+    background-color: rgba(255,255,255,0.12);
+}
+
+body.dark-mode .top-menu a:hover,
+body.dark-mode .top-menu button:hover {
+    background-color: rgba(255,255,255,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .aboutme-container {
+        flex-direction: column;
+    }
+}
