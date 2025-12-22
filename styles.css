@@ -1,179 +1,15 @@
+/* =========================
+   ZÁKLAD
+========================= */
+
 body {
-    background-color: #303235;
-    color: #ffffff;
+    background-color: #f5f5f5;
+    color: #222;
     font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
     margin: 0;
     padding: 0;
     text-align: center;
-}
-
-/* Menu */
-nav {
-    background-color: #303235;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#dynamic-content {
-    background-color: #303235; 
-    padding: 50px 20px;
-    margin: 20px auto;
-    text-align: center;
-    max-width: 900px;
-    max-height: 200px;
-}
-
-#dynamic-content h1 {
-    color: #e2b85c;
-}
-
-#dynamic-content p {
-    color: #797979;
-    font-size: 1.2em;
-}
-
-.logo {
-    height: 40px;
-    margin-left: 15px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 15px;
-    margin-left: auto;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: #505455;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.4s ease;
-}
-
-nav ul li a:hover {
-    color: #d4d2ca;
-}
-
-section {
-    padding: 50px 20px;
-    background-color: #303235; /* Pozadí pro sekce */
-}
-
-/* About Me Container */
-.aboutme-container {
-    
-    display: flex;
-    background-color: #3b3e42;
-    padding: 50px 20px;
-    margin: 20px auto;
-    border-radius: 12px;
-    max-width: 900px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-}
-
-.aboutme-text, .aboutme-img {
-    flex: 1;
-  }
-
-.aboutme-container .social-links {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.aboutme-img img {
-    width: 100%;       
-    max-width: 500px;  /* Maximální šířka obrázku */
-    height: auto;
-  }
-
-.hobby-section {
-    padding: 40px 20px;
-    background-color: #f4f4f4;
-    max-width: 900px;
-    margin: 40px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-/* Kontejnery pro projekty */
-#projects-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
-    gap: 400px auto;
-}
-
-/* Styl jednotlivých boxů */
-.project-box {
-    flex: 1;
-    max-width: 250px;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #303235;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.project-box p {
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-align: center;
-}
-
-/* Obrázek uvnitř boxu */
-.project-box img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-/* Hover efekt - průhlednost a zvětšení */
-.project-box:hover {
-    transform: scale(1.15);
-    opacity: 0.85;
-}
-
-/* Responzivita - pokud je obrazovka menší, boxy se zarovnají do 2 sloupců */
-@media (max-width: 1000px) {
-    #projects-container {
-        flex-wrap: wrap;
-    }
-    .project-box {
-        flex: 0 1 calc(50% - 20px);
-    }
-}
-
-/* Responzivita pro mobilní zařízení - 1 box na řádek */
-@media (max-width: 600px) {
-    .project-box {
-        flex: 0 1 100%;
-    }
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -184,18 +20,188 @@ p {
     font-size: 1.2em;
 }
 
-#githubActivityChart {
-    width: 100%;
-    height: 400px;
+/* =========================
+   NAVIGACE – PILL MENU
+========================= */
+
+nav {
+    background-color: #303235;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Footer styl */
-footer {
+.top-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.top-menu a,
+.top-menu button {
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    background-color: rgba(255,255,255,0.08);
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.top-menu a:hover,
+.top-menu button:hover {
+    background-color: rgba(255,255,255,0.18);
+    transform: translateY(-1px);
+}
+
+.top-menu a:active,
+.top-menu button:active {
+    transform: translateY(0);
+}
+
+#toggleDarkMode {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+/* =========================
+   SEKCE – ZAOBLENÉ RÁMEČKY
+========================= */
+
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #1a1a1a; /* tmavší než body pozadí */
+    border-radius: 15px; /* zaoblené rohy */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* jemný stín */
+    transition: background-color 0.3s ease, color 0.3s ease; /* plynulý přechod */
+}
+
+/* Dark mode pro sekce */
+body.dark-mode section {
+    background-color: #222; /* tmavší sekce pro dark mode */
+    color: #eee;
+}
+
+/* =========================
+   OBSAH
+========================= */
+
+#dynamic-content {
+    background-color: #303235;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+#dynamic-content h1 {
+    color: #e2b85c;
+}
+
+#dynamic-content p {
+    color: #797979;
+}
+
+/* =========================
+   ABOUT ME
+========================= */
+
+.aboutme-container {
+    display: flex;
+    background-color: #3b3e42;
+    border-radius: 15px; /* zaoblené rohy */
+    padding: 50px 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    gap: 20px;
+    align-items: center;
+}
+
+.aboutme-text,
+.aboutme-img {
+    flex: 1;
+}
+
+.aboutme-img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* =========================
+   PROJEKTY
+========================= */
+
+#projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.project-box {
+    max-width: 250px;
+    min-height: 180px;
     background-color: #303235;
     padding: 20px;
-    text-align: center;
-    margin-top: 80px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.project-box img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.project-box:hover {
+    transform: scale(1.12);
+    opacity: 0.85;
+}
+
+/* =========================
+   SCROLL REVEAL – ZÁKLAD
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .reveal {
+        transform: translateY(15px);
+        transition-duration: 0.5s;
+    }
+}
+
+
+/* =========================
+   SOCIÁLNÍ ODKAZY
+========================= */
 
 .social-links {
     display: flex;
@@ -208,93 +214,249 @@ footer {
     background-color: #505455;
     color: #303235;
     padding: 25px 75px;
+    border-radius: 9px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 9px;
-    transition: all 0.4s ease;
+
+    transition: all 0.3s ease;
 }
 
 .social-link:hover {
     background-color: #949391;
-    color: #303235;
 }
 
-#github-container {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
+/* =========================
+   UKRAJINA – ODKAZ
+========================= */
+
+.top-menu a.ua-flag {
+    padding: 4px 6px;
+    background: none;
+}
+
+.ua-flag img {
+    height: 12px !important;
+    width: auto !important;
+    max-height: 12px !important;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+.ua-flag img:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* === UA FLAG FIX === */
+
+.top-menu .ua-link {
+    padding: 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    line-height: 0 !important;
+}
+
+.top-menu .ua-link img {
+    height: 14px;
+    width: auto;
+    display: block;
+}
+
+nav {
+    position: relative; /* důležité */
+}
+
+.ukrajina-flag {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ukrajina-flag img {
+    width: 24px;
+}
+
+.ukrajina-flag {
+    margin-left: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
     background-color: #303235;
     padding: 20px;
-    border-radius: 12px;
-    text-align: center;
+    margin-top: 80px;
+    border-radius: 12px; /* zaoblené rohy pro footer */
 }
 
-#github-container iframe {
-    width: 100%;
-    height: 500px;
-    max-height: 80vh;
-    border: none;
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background-color: #111;
+    color: #eee;
 }
 
-/* Responzivní úpravy pro mobil */
-@media (max-width: 768px) {
-    #github-container {
-        width: 100%;
-        padding: 10px;
-    }
-    #github-container iframe {
-        height: 350px;
-    }
+body.dark-mode nav {
+    background-color: #111;
 }
 
-.github-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    font-weight: 700;
-    font-size: 1.1em;
-    color: #e2b85c;
-    background: #404040;
-    border: 2px solid #e2b85c;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(226, 184, 92, 0.3);
-    transition: 
-        background-color 0.3s ease, 
-        color 0.3s ease, 
-        transform 0.3s ease, 
-        box-shadow 0.3s ease;
-    cursor: pointer;
+body.dark-mode section,
+body.dark-mode footer,
+body.dark-mode #dynamic-content {
+    background-color: #222; /* tmavší sekce pro dark mode */
+    color: #eee;
 }
 
-.github-link:hover, 
-.github-link:focus {
-    background-color: #e2b85c;
-    color: #303235;
-    box-shadow: 0 8px 15px rgba(226, 184, 92, 0.7);
-    transform: translateY(-4px) scale(1.05);
-    outline: none;
+body.dark-mode .aboutme-container {
+    background-color: #1b1b1b;
 }
 
+body.dark-mode .top-menu a,
+body.dark-mode .top-menu button {
+    background-color: rgba(255,255,255,0.12);
+}
 
-/* Media queries pro responsivní design */
+body.dark-mode .top-menu a:hover,
+body.dark-mode .top-menu button:hover {
+    background-color: rgba(255,255,255,0.25);
+}
+
+/* ========================================
+   RESPONSIVE - lišta na mobilu whatsup
+=======================================*/
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
     }
-    .logo {
-        margin-left: 0;
+
+    .aboutme-container {
+        flex-direction: column;
     }
-    nav ul {
-        justify-content: center;
-        margin-left: 0;
-        margin-top: 10px;
+}
+
+.whatsapp-bar,
+.whatsapp-bar:link,
+.whatsapp-bar:visited,
+.whatsapp-bar:hover,
+.whatsapp-bar:active {
+    text-decoration: none !important;  /* odstraní podtržení všude */
+    color: #fff !important;            /* bílé písmo vždy */
+}
+
+.whatsapp-bar {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    display: none; /* defaultně skryté, zobrazíš jen na mobilu */
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(37, 211, 102, 0.95),
+        rgba(30, 180, 90, 0.95)
+    );
+    padding: 14px 24px;
+    border-radius: 999px;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    -webkit-tap-highlight-color: transparent; /* odstraní modré bliknutí na iOS */
+    -webkit-touch-callout: none;               /* zruší menu při dlouhém stisku */
+}
+
+@media (max-width: 768px) {
+    .whatsapp-bar {
+        display: inline-flex; /* jen mobil */
+        gap: 10px;
     }
-    section {
-        padding: 30px 10px;
+}
+
+.whatsapp-bar:active {
+    transform: translateX(-50%) scale(0.96);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .aboutme-container,
+    #projects-container,
+    section,
+    #dynamic-content {
+        flex-direction: column;    /* u flex containerů */
+        align-items: center;       /* horizontální centrování */
+        text-align: center;        /* text uvnitř bloků */
     }
-    #github-container {
+}
+
+.whatsapp-bar {
+    transform: translateX(-50%) translateY(100px); /* start mimo obrazovku */
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.whatsapp-bar.show {
+    transform: translateX(-50%) translateY(0); /* finální pozice */
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .masaze-container {
         width: 90%;
-        margin-top: 20px;
+        height: auto;
+        flex-direction: column;
+        align-items: center; /* centrum obsahu */
+        justify-content: center;
+    }
+
+    .masaze-text {
+        text-align: center; /* centrum textu */
+        width: 100%;
+        padding: 20px;
+    }
+
+    .split-image {
+        width: 100%; /* obrázky se přizpůsobí */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .masaze-container.mobile-flex {
+        width: 90%;
+        height: auto;
+        flex-direction: column; /* sloupcové rozložení */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .masaze-container.mobile-flex .masaze-text {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .masaze-container.mobile-flex .split-image {
+        position: relative; /* změna z absolute */
+        width: 100%;
+        height: auto;
+        background-size: contain;
+        margin-bottom: 20px;
     }
 }
