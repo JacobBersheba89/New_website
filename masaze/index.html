@@ -14,6 +14,7 @@
         padding: 0;
         scroll-behavior: smooth;
         transition: background-color 0.3s, color 0.3s;
+        text-align: center; /* základní centrování */
     }
 
     /* --- NAVIGACE --- */
@@ -55,6 +56,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
+        
     }
 
     .masaze-img {
@@ -83,7 +86,6 @@
         position: relative;
         z-index: 1;
         max-width: 600px;
-        text-align: center;
         padding: 20px;
         opacity: 0;
         transition: opacity 1s ease-in-out;
@@ -109,13 +111,20 @@
         transform: translateY(30px);
         transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
         .reveal { transform: translateY(15px); transition-duration: 0.5s; }
+
+        .masaze-container,
+        section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+        }
+
+        nav { flex-direction: column; }
     }
 
     /* --- DARK MODE --- */
@@ -124,6 +133,43 @@
     body.dark-mode nav a, body.dark-mode nav button { background-color: #333; color: #eee; }
     body.dark-mode section, body.dark-mode footer { background-color: #1b1b1b; }
     body.dark-mode .top-menu a:hover, body.dark-mode .top-menu button:hover { background-color: #444; }
+
+    /* --- WhatsApp tlačítko --- */
+    .whatsapp-bar,
+    .whatsapp-bar:link,
+    .whatsapp-bar:visited,
+    .whatsapp-bar:hover,
+    .whatsapp-bar:active {
+        text-decoration: none !important;
+        color: #fff !important;
+    }
+
+    .whatsapp-bar {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(37, 211, 102, 0.95), rgba(30, 180, 90, 0.95));
+        padding: 14px 24px;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+        backdrop-filter: blur(6px);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+
+    .whatsapp-bar:active {
+        transform: translateX(-50%) scale(0.96);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 </style>
 </head>
 
@@ -135,12 +181,12 @@
     <a href="#omne">o masérovi</a>
     <a href="#cenik">ceník</a>
     <a href="#kontakt">kontakt</a>
-    <button id="toggleDarkMode">🌙</button> 
+    <button id="toggleDarkMode">🌙</button>
 </nav>
 
 <!-- ÚVOD -->
 <div id="home" class="masaze-wrapper">
-    <div class="masaze-container">
+    <div class="masaze-container mobile-flex">
         <div class="masaze-img">
             <div class="split-image left"></div>
             <div class="split-image right"></div>
@@ -202,6 +248,16 @@
         <img src="tady.png" alt="Ukázkový obrázek" style="width:100%; height:auto; aspect-ratio:1299/731; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
     </div>
 </section>
+
+<!-- WhatsApp tlačítko -->
+<a 
+  href="https://wa.me/420776100489?text=Ahoj/dobrý%20den,%20kdy%20se%20můžeme%20domluvit%20na%20masáž?%20Předem%20děkuji."
+  class="whatsapp-bar"
+  target="_blank"
+  aria-label="Domluvit masáž přes WhatsApp"
+>
+  💬 Domluvit masáž
+</a>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
