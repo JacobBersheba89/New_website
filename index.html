@@ -1,61 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacob´s_analysis</title>
-    <link rel="icon" type="image/png" href="chart/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masáže - Jakub Pawlas</title>
+
+<style>
+    body {
+        background-color: white;
+        color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        transition: background-color 0.3s, color 0.3s;
+        text-align: center; /* základní centrování */
+    }
+
+    /* --- NAVIGACE --- */
+    nav {
+        width: 100%;
+        background-color: white;
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a, nav button {
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 8px 20px;
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    nav a { background-color: #f0f0f0; color: #333; }
+    nav a:hover { background-color: #e0e0e0; transform: translateY(-2px); }
+    nav button { background-color: #333; color: white; border: 1px solid #333; }
+    nav button:hover { background-color: #555; transform: translateY(-2px); }
+
+    /* --- KONTEJNER MASÁŽÍ --- */
+    .masaze-container {
+        width: 800px;
+        height: 600px;
+        position: relative;
+        margin: 40px auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+
+    .masaze-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .split-image {
+        width: 50%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    }
+
+    .left { background-image: url('img/m1.png'); }
+    .right { background-image: url('img/m2.png'); }
+
+    .masaze-container:hover .left { transform: translateX(-100%); opacity: 0; }
+    .masaze-container:hover .right { transform: translateX(100%); opacity: 0; }
+
+    .masaze-text {
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .masaze-container:hover .masaze-text { opacity: 1; }
+
+    /* --- SEKCE --- */
+    section {
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: 20px auto;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    h2 { margin-bottom: 20px; }
+    a { color: inherit; }
+
+    /* --- SCROLL REVEAL --- */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+        .reveal { transform: translateY(15px); transition-duration: 0.5s; }
+
+        .masaze-container,
+        section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 90%;
+        }
+
+        nav { flex-direction: column; }
+    }
+
+    /* --- DARK MODE --- */
+    body.dark-mode { background-color: #111; color: #eee; }
+    body.dark-mode nav { background-color: #222; }
+    body.dark-mode nav a, body.dark-mode nav button { background-color: #333; color: #eee; }
+    body.dark-mode section, body.dark-mode footer { background-color: #1b1b1b; }
+    body.dark-mode .top-menu a:hover, body.dark-mode .top-menu button:hover { background-color: #444; }
+
+    /* --- WhatsApp tlačítko --- */
+    .whatsapp-bar,
+    .whatsapp-bar:link,
+    .whatsapp-bar:visited,
+    .whatsapp-bar:hover,
+    .whatsapp-bar:active {
+        text-decoration: none !important;
+        color: #fff !important;
+    }
+
+    .whatsapp-bar {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(37, 211, 102, 0.95), rgba(30, 180, 90, 0.95));
+        padding: 14px 24px;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+        backdrop-filter: blur(6px);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+
+    .whatsapp-bar:active {
+        transform: translateX(-50%) scale(0.96);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+</style>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
-        <ul>
-            <li><a href="#aboutme">About Me</a></li>
-            <li><a href="#hobby">Hobby</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    
+<!-- NAVIGACE -->
+<nav class="top-menu">
+    <a href="#home">úvod</a>
+    <a href="#omne">o masérovi</a>
+    <a href="#cenik">ceník</a>
+    <a href="#kontakt">kontakt</a>
+    <button id="toggleDarkMode">🌙</button>
+</nav>
 
-    <section id="dynamic-content">
-        <h1>My data analysis </h1>
-        <p>PYTHON - SQL - TABLEAU</p>
-    </section>
-    
-    <section id="projects-container">
-        <a href="covid.html" class="project-box">
-            <img src="covid.png" alt="Covid Data Analysis">
-            <p>Covid Data Analysis</p>
-        </a>
-        <a href="stocks.html" class="project-box">
-            <img src="familyII.png" alt="Our family analyse">
-            <p>Births in our family</p>
-        </a>
-        <a href="ml.html" class="project-box">
-            <img src="uk2.png" alt="Another analyse of Ukrainian conflict">
-            <p>Development of the Ukrainian conflict</p>
-        </a>
-        <a href="food.html" class="project-box">
-            <img src="food.png" alt="Analysis of nutrition">
-            <p>Recent nutritional changes</p>
-        </a>
-        <a href="pokenoGo.html" class="project-box">
-            <img src="img/po.png" alt="Analysis of Pokemon GO app">
-            <p>Analysis of Pokemon GO app</p>
-        </a>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/jakub-pawlas-06b48822a" target="_blank" class="social-link">LinkedIn</a>
-            <a href="https://github.com/JacobBersheba89/New_website" target="_blank" class="social-link">GitHub</a>
-            <a href="https://www.instagram.com/jacobs_analysis/" target="_blank" class="social-link">Instagram</a>
+<!-- ÚVOD -->
+<div id="home" class="masaze-wrapper">
+    <div class="masaze-container mobile-flex">
+        <div class="masaze-img">
+            <div class="split-image left"></div>
+            <div class="split-image right"></div>
         </div>
-    </footer>
-    
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <div class="masaze-text">
+            <h2>Profesionální masáže pro úlevu od bolesti, napětí a stresu</h2>
+
+            <p>
+                Masáž není luxus, ale součást péče o tělo i psychiku.
+                Pomohu vám ulevit od bolesti zad, ztuhlých svalů,
+                přetížení ze sportu i každodenního stresu.
+            </p>
+
+            <p>
+                Každá masáž je přizpůsobená vašim aktuálním potřebám –
+                bez spěchu, v klidném prostředí a s důrazem na skutečný efekt.
+            </p>
+
+            <h3>Kdy masíruji?</h3>
+            <p>
+                Masíruji po předchozí telefonické domluvě.<br>
+                Nejčastěji v odpoledních a podvečerních hodinách.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- O MNĚ -->
+<section id="omne" class="reveal">
+    <h2>O masérovi</h2>
+
+    <p>
+        Jmenuji se Jakub Pawlas a masážím se věnuji profesionálně již řadu let.
+        Vystudoval jsem regeneraci a výživu ve sportu na Masarykově univerzitě v Brně
+        a pracoval jsem s vrcholovými i rekreačními sportovci. Kromě studia na univerzitě 
+        jsem rovněž absolvoval řadu kurzů. 
+    </p>
+
+    <p>
+        Během své praxe jsem se staral o reprezentanty v cyklistice, veslování
+        i běžeckém lyžování a doprovázel sportovce na náročných závodech
+        v Česku i zahraničí – například RAAM (USA) nebo Crocodile Trophy v Austrálii.
+    </p>
+
+    <p>
+        Díky těmto zkušenostem dokážu rychle rozpoznat příčinu svalového napětí
+        a zvolit správnou techniku.
+        Každé masáži se věnuji individuálně – cílem je úleva,
+        regenerace a dlouhodobý efekt, ne jen krátkodobý pocit uvolnění.
+    </p>
+
+    <p>
+        Používám výhradně kvalitní <strong>BIO nosné a esenciální oleje</strong>.
+    </p>
+</section>
+
+<!-- CENÍK -->
+<section id="cenik" class="reveal">
+    <h2>Ceník</h2>
+
+    <p><strong>Masáž 60 minut – 700 Kč</strong></p>
+    <p><strong>Masáž 90 minut – 1 000 Kč</strong></p>
+
+    <p>
+        Součástí masáže mohou být dle potřeby baňky,
+        nahřáté lávové kameny nebo moderní regenerační pomůcky
+        (perkusní pistole, Compex).
+    </p>
+
+    <p>
+        Typ masáže vždy přizpůsobuji vašemu aktuálnímu stavu
+        a domluvě před samotnou procedurou.
+    </p>
+
+    <h3>Dárkový voucher</h3>
+    <p>
+        Dárkový voucher je ideální volbou pro ty,
+        na kterých vám opravdu záleží.
+    </p>
+
+    <div style="margin-top:20px; width:100%; max-width:900px; height:400px; border-radius:12px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.3); margin:auto;">
+        <img src="voucher.png" alt="voucher" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="reveal">
+    <h2>Kontakt / Rezervace</h2>
+    <p>
+        Pro rezervaci termínu mi zavolejte nebo napište.
+        Rád se s vámi domluvím na vhodném čase i typu masáže.
+    </p>
+
+    <p><strong>📞 Telefon:</strong> <a href="tel:+420776100489">+420 776 100 489</a></p>
+    <p><strong>✉️ E-mail:</strong> <a href="mailto:rezervace@jakubpawlas.cz">rezervace@jakubpawlas.cz</a></p>
+    <p><strong>📍 Kde masíruji:</strong> Marušky Kudeříkové 1140/3, 736 01 Havířov - Město</p>
+    <p><strong>📍 IČO:</strong> 75992655, nejsem plátce daně </p>
+
+    <div style="margin-top:20px; border-radius:12px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2604.123456789!2d18.444444!3d49.779999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47125a123456789%3A0xabcdef123456789!2sMaru%C5%A1ky%20Kude%C5%99%C3%ADkov%C3%A9%201140%2F3%2C%20736%2001%20Hav%C3%AD%C5%99ov!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div style="margin-top:20px;">
+        <img src="tady.png" alt="Ukázkový obrázek" style="width:100%; height:auto; aspect-ratio:1299/731; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+    </div>
+</section>
+
+<!-- WhatsApp tlačítko -->
+<a 
+  href="https://wa.me/420776100489?text=Ahoj/dobrý%20den,%20kdy%20se%20můžeme%20domluvit%20na%20masáž?%20Předem%20děkuji."
+  class="whatsapp-bar"
+  target="_blank"
+  aria-label="Domluvit masáž přes WhatsApp"
+>
+  💬 Domluvit masáž
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Dark mode toggle
+    const toggle = document.getElementById('toggleDarkMode');
+    if(toggle){
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 120;
+            if(elementTop < windowHeight - revealPoint){
+                el.classList.add('active');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // trigger po načtení
+});
+</script>
+
 </body>
 </html>
