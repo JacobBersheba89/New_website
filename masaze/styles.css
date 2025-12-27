@@ -226,6 +226,62 @@ body.dark-mode section {
 }
 
 /* =========================
+   UKRAJINA – ODKAZ
+========================= */
+
+.top-menu a.ua-flag {
+    padding: 4px 6px;
+    background: none;
+}
+
+.ua-flag img {
+    height: 12px !important;
+    width: auto !important;
+    max-height: 12px !important;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+.ua-flag img:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* === UA FLAG FIX === */
+
+.top-menu .ua-link {
+    padding: 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    line-height: 0 !important;
+}
+
+.top-menu .ua-link img {
+    height: 14px;
+    width: auto;
+    display: block;
+}
+
+nav {
+    position: relative; /* důležité */
+}
+
+.ukrajina-flag {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ukrajina-flag img {
+    width: 24px;
+}
+
+.ukrajina-flag {
+    margin-left: auto;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -270,9 +326,9 @@ body.dark-mode .top-menu button:hover {
     background-color: rgba(255,255,255,0.25);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ========================================
+   RESPONSIVE - lišta na mobilu whatsup
+=======================================*/
 
 @media (max-width: 768px) {
     nav {
@@ -282,4 +338,141 @@ body.dark-mode .top-menu button:hover {
     .aboutme-container {
         flex-direction: column;
     }
+}
+
+.whatsapp-bar,
+.whatsapp-bar:link,
+.whatsapp-bar:visited,
+.whatsapp-bar:hover,
+.whatsapp-bar:active {
+    text-decoration: none !important;  /* odstraní podtržení všude */
+    color: #fff !important;            /* bílé písmo vždy */
+}
+
+.whatsapp-bar {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    display: none; /* defaultně skryté, zobrazíš jen na mobilu */
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(37, 211, 102, 0.95),
+        rgba(30, 180, 90, 0.95)
+    );
+    padding: 14px 24px;
+    border-radius: 999px;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    -webkit-tap-highlight-color: transparent; /* odstraní modré bliknutí na iOS */
+    -webkit-touch-callout: none;               /* zruší menu při dlouhém stisku */
+}
+
+@media (max-width: 768px) {
+    .whatsapp-bar {
+        display: inline-flex; /* jen mobil */
+        gap: 10px;
+    }
+}
+
+.whatsapp-bar:active {
+    transform: translateX(-50%) scale(0.96);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .aboutme-container,
+    #projects-container,
+    section,
+    #dynamic-content {
+        flex-direction: column;    /* u flex containerů */
+        align-items: center;       /* horizontální centrování */
+        text-align: center;        /* text uvnitř bloků */
+    }
+}
+
+.whatsapp-bar {
+    transform: translateX(-50%) translateY(100px); /* start mimo obrazovku */
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.whatsapp-bar.show {
+    transform: translateX(-50%) translateY(0); /* finální pozice */
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .masaze-container {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        align-items: center; /* centrum obsahu */
+        justify-content: center;
+    }
+
+    .masaze-text {
+        text-align: center; /* centrum textu */
+        width: 100%;
+        padding: 10px;
+    }
+
+    .split-image {
+        width: 100%; /* obrázky se přizpůsobí */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .masaze-container.mobile-flex {
+        width: 90%;
+        height: auto;
+        flex-direction: column; /* sloupcové rozložení */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .masaze-container.mobile-flex .masaze-text {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .masaze-container.mobile-flex .split-image {
+        position: relative; /* změna z absolute */
+        width: 100%;
+        height: auto;
+        background-size: contain;
+        margin-bottom: 10px;
+    }
+}
+
+/* --- ECO / BIO IKONY  --- */
+/* --- BIO/ECO ikony --- */
+.eco-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;       /* mezera mezi ikonami */
+    margin: 20px 0;  /* prostor kolem */
+}
+
+.eco-icons img {
+    max-height: 50px;  /* nastavíme maximální výšku */
+    width: auto;       /* zachování proporcí */
+    object-fit: contain;
 }
